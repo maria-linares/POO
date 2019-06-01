@@ -1,1 +1,30 @@
-#include'senku.h'
+#include"senku.h"
+using namespace std;
+void crear_tablero(tipomatriz tablero[][9],size_t filas,size_t columnas){
+    char O='O',x='+',esp=' ';
+    for(size_t f=0;f<filas;++f){
+        for(size_t c=0;c<columnas;c++){
+            if(f==0 || f==8 || c==0 ||c==8 ){
+                tablero[f][c]=esp;
+            }
+            else if((f<3 || f>5) && (c<3 ||c>5)){
+                tablero[f][c]=esp;
+
+            }else if(f==4 && c==4){
+                tablero[f][c]=x;
+            }else{
+                tablero[f][c]=O;
+            }
+
+        }
+    }
+}
+void imprimir_tablero(tipomatriz tablero[][9],size_t filas,size_t columnas){
+    for(size_t f=0;f<filas;++f){
+        for(size_t c=0;c<columnas;c++){
+            cout<<setw(2)<<tablero[f][c];
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+}
