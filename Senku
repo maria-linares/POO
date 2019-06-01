@@ -2,10 +2,22 @@
 #include"senku.h"
 using namespace std;
 int main() {
-  int x1,x2,y1,y2;
-    tipomatriz tablero[nrow][ncol];
-    crear_tablero(tablero,nrow,ncol);
-    imprimir_tablero(tablero,nrow,ncol);
-    mover_ficha(tablero,x1,x2, y1,y2);
+    int tab;
+    int x1,x2,y1,y2;
+    tipomatriz tablero1[nrow1][ncol1];
+    tipomatriz tablero2[nrow2][ncol2];
+    tipomatriz tablero3[nrow3][ncol3];
+    crear_tablero1(tablero1,nrow1,ncol1);
+    crear_tablero2(tablero2,nrow2,ncol2);
+    crear_tablero3(tablero3,nrow3,ncol3);
+    menu_inicial(tablero1,tablero2,tablero3);
+    tab=elegir_tablerodejuego();
+    imprimir_tablero1C(tablero1,nrow1,ncol1);
+    imprimir_tablero2C(tablero2,nrow2,ncol2);
+    imprimir_tablero3C(tablero3,nrow3,ncol3);
+    mover_ficha(tablero1);
+
+
+
     return 0;
 }
