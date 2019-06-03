@@ -1,23 +1,32 @@
-#include <iostream>
 #include"senku.h"
 using namespace std;
 int main() {
+    int nrow=0,ncol=0;
+    char**tablero= nullptr;
     int tab;
-    int x1,x2,y1,y2;
-    tipomatriz tablero1[nrow1][ncol1];
-    tipomatriz tablero2[nrow2][ncol2];
-    tipomatriz tablero3[nrow3][ncol3];
-    crear_tablero1(tablero1,nrow1,ncol1);
-    crear_tablero2(tablero2,nrow2,ncol2);
-    crear_tablero3(tablero3,nrow3,ncol3);
-    menu_inicial(tablero1,tablero2,tablero3);
-    tab=elegir_tablerodejuego();
-    imprimir_tablero1C(tablero1,nrow1,ncol1);
-    imprimir_tablero2C(tablero2,nrow2,ncol2);
-    imprimir_tablero3C(tablero3,nrow3,ncol3);
-    mover_ficha(tablero1);
-
-
-
+    int termina=0;
+    tipomatriz tablero1[9][9];
+    tipomatriz tablero2[11][11];
+    tipomatriz tablero3[9][9];
+    //juego
+    tab=menu_inicial(tablero1,tablero2,tablero3,nrow,ncol);
+    cout<<nrow<<endl;
+    cout<<tab<<endl;
+    //declarar tablero
+    tablero=new char*[nrow];
+    for (size_t i = 0; i <nrow ; ++i) {
+        tablero[i] = new char[nrow];
+    }
+    crear_juego(tablero, nrow, ncol,tab);
+    imprimir_tableroC(tablero,nrow,ncol);
+    int mov=0;
+    while(termina==0){
+        mover_ficha(tablero,nrow,ncol);
+        ++mov;
+        cout<<"Numero movimientos: "<<mov<<endl;
+        imprimir_tableroC(tablero,nrow,ncol);
+        termina=comprobar_juego(tablero,nrow,ncol);
+    }
+    borrar_tablero(tablero,ncol);
     return 0;
 }
