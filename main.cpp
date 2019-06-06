@@ -1,3 +1,4 @@
+#include <iostream>
 #include"senku.h"
 using namespace std;
 int main() {
