@@ -158,20 +158,27 @@ int comprobar_juego(char **tablero,size_t filas,size_t columnas){
         return -1;
     }else{return 0;}
 }
+
 void mover_ficha(char **tablero,int fil, int col) {
     int x1=0, x2=0, y1=0, y2=0;
     int si = 0;
     do {
-        cout << "Ingrese la posicion de origen (fila, columna): \n";
-        cin >> x1 >> y1;
-        if ((x1 > 0 || x1 < fil) && (y1 > 0 || y1 < col) && (tablero[x1][y1] == O)) {
-            cout << "Ingrese la posicion de destino (fila, columna): \n";
-            cin >> x2 >> y2;
+        cout << "Ingrese la posicion de origen (fila): \n";
+        cin >> x1;
+        cout << "Ingrese la posicion de origen (columna): \n";
+        cin >>y1;
+
+        if ((x1 > 0 && x1 < fil) && (y1 > 0 && y1 < col) && (tablero[x1][y1] == O)) {
+            cout << "Ingrese la posicion de destino (fila): \n";
+            cin >> x2;
+            cout << "Ingrese la posicion de destino (columna): \n";
+            cin >> y2;
             if ((tablero[x2][y2] == x) && (tablero[x1 + (x2 - x1) / 2][y1 + (y2 - y1) / 2] == O) &&
                 (abs(x2 - x1) == 2 || abs(y2 - y1) == 2)) {
                 ++si;
             } else {
-                cout << "Ingrese un movimiento valido\n";
+                cout << "Movimiento invalido.\n";
+                cout << "Ingrese un movimiento valido.\n";
             }
         }
     } while (si == 0);
