@@ -1,6 +1,8 @@
 #include <iostream>
 #include"senku.h"
+
 using namespace std;
+
 int main() {
     int nrow=0,ncol=0;
     char**tablero= nullptr;
@@ -11,8 +13,6 @@ int main() {
     tipomatriz tablero3[9][9];
     //juego
     tab=menu_inicial(tablero1,tablero2,tablero3,nrow,ncol);
-    cout<<nrow<<endl;
-    cout<<tab<<endl;
     //declarar tablero
     tablero=new char*[nrow];
     for (size_t i = 0; i <nrow ; ++i) {
