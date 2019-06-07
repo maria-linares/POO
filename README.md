@@ -22,7 +22,7 @@ Tener Clion (Recomendado) o un programa con C++14.
 3) Ingresar número de columna que desea mover
 4) Ingresar número de fila donde quiere mover la ficha
 5) Ingresar número de columna donde quiere mover la ficha
-6) Repetir pasos 2-5 hasta que finalicé el juego o gane.
+6) Repetir pasos 2-5 hasta que finalice el juego o gane.
 
 ## Reglas del juego
 
